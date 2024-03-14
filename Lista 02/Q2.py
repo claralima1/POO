@@ -1,7 +1,7 @@
 class Viagem:
-    def __init__(self):
-        self.__distancia = 0
-        self.__tempo = 0
+    def __init__(self, distancia, tempo):
+        self.__distancia = distancia
+        self.__tempo = tempo
 
     def set_distancia(self, d):
         if d>=0:
@@ -26,9 +26,9 @@ class Viagem:
 
 class UI:
     def main():
-        v = Viagem()
         x = float(input("Distancia: "))
         y = float(input("Tempo: "))
+        v = Viagem(x, y)
         v.set_distancia(x)
         v.set_tempo(y)
         print(v.velocidade_media())
