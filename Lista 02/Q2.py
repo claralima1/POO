@@ -31,5 +31,5 @@ class UI:
         v = Viagem(x, y)
         v.set_distancia(x)
         v.set_tempo(y)
-        print(v.velocidade_media())
+        print("velocidade média: ", v.velocidade_media())
 UI.main()
