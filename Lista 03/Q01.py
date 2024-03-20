@@ -25,22 +25,23 @@ class Retangulo:
     
     def get_altura(self):
         return self.__altura
+
+    def __str__(self):
+        return f'Base = {self.__base}\nAltura = {self.__altura}'
     
     def calc_area(self):
         return self.__base*self.__altura
     
     def calc_diagonal(self):
-        self.cateto1 = self.__base/2
-        self.cateto2 = self.__altura/2
-        return self.cateto1**2 + self.cateto2**2
-    def __str__(self):
-        return f'base = {self.__base} Altura = {self.__altura}'
+        return self.__base**2 + self.__altura**2
+
+  
 class UI:
     def main():
         b = float(input("Digite a base do retângulo: "))
         a = float(input("Digite a altura do retângulo: "))
         r = Retangulo(b, a)
-        print(f'Area= {r.calc_area()} Diagonal = {r.calc_diagonal()}')
+        print(f'Area = {r.calc_area()}\nDiagonal = {r.calc_diagonal()}')
         print(r)
 
 UI.main()
