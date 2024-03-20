@@ -37,7 +37,8 @@ class Retangulo:
 
   
 class UI:
-    def main():
+    @staticmethod #para instanciar a classe
+    def main(): #classe estática
         b = float(input("Digite a base do retângulo: "))
         a = float(input("Digite a altura do retângulo: "))
         r = Retangulo(b, a)
