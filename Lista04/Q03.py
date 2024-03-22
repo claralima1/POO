@@ -3,14 +3,12 @@ class Playlist:
         self.__nome = nome
         self.__descricao = descricao
         self.__musicas = []
+
     def set_nome(self, n):
         self.__nome = n
 
     def set_descricao(self, d):
         self.__descricao = d
-
-    def set_musicas(self):
-        pass
 
     def get_nome(self):
         return self.__nome
@@ -18,8 +16,6 @@ class Playlist:
     def get_descrição(self):
         return self.__descricao
 
-    def get_musicas(self):
-        return self.__musicas
 
     def inserir(self, m):
         self.__musicas.append(m)
@@ -28,12 +24,22 @@ class Playlist:
         return self.__musicas
     
     def __str__(self):
-        return f'Nome da música: {self.__musicas}\nDescrição: {self.__descricao}'
+        return f'Total de Músicas na Playlist: {len(self.__musicas)}'
+
+class Musica:
+    def __init__(self, titulo, artista, album):
+        self.__titulo = titulo
+        self.__artista = artista
+        self.__album = album
+
+    def __str__(self):
+        return f'Título da Música: {self.__titulo} Artista: {self.__artista} Album: {self.__album}'
+
 class UI:
 
     def main():
-        n = input()
-        d = input()
+        n = input("Nome da Música: ")
+        d = input("Descrição: ")
         p = Playlist(n, d)
 
         print(p)
