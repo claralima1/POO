@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/POO/Aula_09CS/Aula_09CS.csproj": {}
+    "/workspaces/POO/Lista02/Lista02.csproj": {}
   },
   "projects": {
-    "/workspaces/POO/Aula_09CS/Aula_09CS.csproj": {
+    "/workspaces/POO/Lista02/Lista02.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/POO/Aula_09CS/Aula_09CS.csproj",
-        "projectName": "Aula_09CS",
-        "projectPath": "/workspaces/POO/Aula_09CS/Aula_09CS.csproj",
+        "projectUniqueName": "/workspaces/POO/Lista02/Lista02.csproj",
+        "projectName": "Lista02",
+        "projectPath": "/workspaces/POO/Lista02/Lista02.csproj",
         "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/POO/Aula_09CS/obj/",
+        "outputPath": "/workspaces/POO/Lista02/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/codespace/.nuget/NuGet/NuGet.Config"
