@@ -1,0 +1,15 @@
+/workspaces/POO/L04Q2/obj/Debug/net8.0/L04Q2.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/POO/L04Q2/obj/Debug/net8.0/L04Q2.AssemblyInfoInputs.cache
+/workspaces/POO/L04Q2/obj/Debug/net8.0/L04Q2.AssemblyInfo.cs
+/workspaces/POO/L04Q2/obj/Debug/net8.0/L04Q2.csproj.CoreCompileInputs.cache
+/workspaces/POO/L04Q2/obj/Debug/net8.0/L04Q2.sourcelink.json
+/workspaces/POO/L04Q2/bin/Debug/net8.0/L04Q2
+/workspaces/POO/L04Q2/bin/Debug/net8.0/L04Q2.deps.json
+/workspaces/POO/L04Q2/bin/Debug/net8.0/L04Q2.runtimeconfig.json
+/workspaces/POO/L04Q2/bin/Debug/net8.0/L04Q2.dll
+/workspaces/POO/L04Q2/bin/Debug/net8.0/L04Q2.pdb
+/workspaces/POO/L04Q2/obj/Debug/net8.0/L04Q2.dll
+/workspaces/POO/L04Q2/obj/Debug/net8.0/refint/L04Q2.dll
+/workspaces/POO/L04Q2/obj/Debug/net8.0/L04Q2.pdb
+/workspaces/POO/L04Q2/obj/Debug/net8.0/L04Q2.genruntimeconfig.cache
+/workspaces/POO/L04Q2/obj/Debug/net8.0/ref/L04Q2.dll
