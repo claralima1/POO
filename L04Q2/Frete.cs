@@ -10,12 +10,12 @@ class Frete {
     
     }
     public void set_distancia(double d){
-        if(d<=0) throw new ArgumentOutOfRangeException();
+        if(d<=0) throw new ArgumentOutOfRangeException("Apenas valores maiores que 0");
         else distancia = d;
     }
 
     public void set_peso(double p){
-        if(p<=0) throw new ArgumentOutOfRangeException();
+        if(p<=0) throw new ArgumentOutOfRangeException("Apenas valores maiores que 0");
         else peso = p;
     }
 

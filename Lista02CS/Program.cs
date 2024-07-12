@@ -1,4 +1,4 @@
-﻿namespace Lista02;
+﻿namespace Lista02CS;
 
 class Program
 {

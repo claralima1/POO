@@ -1,13 +1,8 @@
 class Frete:
     def __init__(self, d, p):
-        if d<0:
-            raise ValueError()
-        else:
-            self.__d = d
-        if p<0:
-            raise ValueError()
-        else:
-            self.__p = p
+        self.set_distancia(d)
+        self.set_peso(p)
+
     def set_distancia(self, d):
         if d<0:
             raise ValueError()

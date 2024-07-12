@@ -1,5 +1,0 @@
-/workspaces/POO/Lista02/obj/Debug/net8.0/Lista02.GeneratedMSBuildEditorConfig.editorconfig
-/workspaces/POO/Lista02/obj/Debug/net8.0/Lista02.AssemblyInfoInputs.cache
-/workspaces/POO/Lista02/obj/Debug/net8.0/Lista02.AssemblyInfo.cs
-/workspaces/POO/Lista02/obj/Debug/net8.0/Lista02.csproj.CoreCompileInputs.cache
-/workspaces/POO/Lista02/obj/Debug/net8.0/Lista02.sourcelink.json
