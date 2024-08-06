@@ -3,7 +3,7 @@ class Circulo {
     public Circulo()
     public void SetRaio(double r){
         if(r >=0) raio = r;
-        else throw new ArgumentOutOfRangeException();
+        else throw new ArgumentOutOfRangeException("informe um valor maior que 0");
     }
     public double GetRaio(){
         return raio;
