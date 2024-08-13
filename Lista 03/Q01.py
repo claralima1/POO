@@ -44,7 +44,9 @@ class UI:
         r = Retangulo(b, a)
         print(f'Area = {r.calc_area()}\nDiagonal = {r.calc_diagonal()}')
         print(r)
+        print(r.get_base())
+        
+    
 
 UI.main()
-
 

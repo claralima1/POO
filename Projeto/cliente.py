@@ -9,6 +9,24 @@ class Cliente:
     def __str__(self):
         return f"{self.id} - {self.nome} - {self.email} - {self.fone}"
     
+    def set_nome(self, n):
+        self.nome = n
+    
+    def set_email(self, e):
+        self.email = e
+    
+    def set_nome(self, f):
+        self.fone = f
+    
+    def get_nome(self):
+        return self.nome
+    
+    def get_email(self):
+        return self.email
+    
+    def get_fone(self):
+        return self.fone 
+    
 class Venda:
     def __init__(self, id):
         self.id = id
@@ -21,6 +39,18 @@ class VendaItem:
         self.id = id
         self.qtd = qtd
         self.preco = preco
+    
+    def set_qtd(self, q):
+        self.qtd = q
+    
+    def get_nome(self):
+        return self.qtd
+
+    def set_preco(self, p):
+        self.preco = p
+    
+    def get_nome(self):
+        return self.preco
 
     def __str__(self):
         return f"{self.id} - {self.nome} - {self.email} - {self.fone}"
@@ -35,12 +65,36 @@ class Produto:
     def __str__(self):
         return f"{self.id} - {self.desc} - {self.preco} - {self.estoque}"
 
-class Catgoria:
+    def set_desc(self, d):
+        self.desc = d
+    
+    def get_desc(self):
+        return self.desc
+    
+    def set_preco(self, p):
+        self.preco = p
+    
+    def get_nome(self):
+        return self.preco
+
+    def set_estoque(self, e):
+        self.estoque = e
+    
+    def get_nome(self):
+        return self.nome
+
+class Categoria:
     def __init__(self, id, desc):
         self.id = id
         self.desc = desc
     def  __str__(self):
         return f"{self.id} - {self.desc}"
+    
+    def set_desc(self, d):
+        self.desc = d
+    
+    def get_desc(self):
+        return self.desc
 
 # Persistência: Modelo -> Arquivo Json    
 class Clientes:
@@ -201,7 +255,7 @@ class VendasItens:
     @classmethod
     def abrir(cls):
         cls.vendas_itens = []
-        with open("vendar.json", mode="r") as arquivo:
+        with open("vendas_itens.json", mode="r") as arquivo:
             texto_arquivo = json.load(arquivo)
             for vend in texto_arquivo:
                 v = VendaItem(vend["id"], vend["qtd"], vend["preco"])
@@ -415,7 +469,7 @@ class UI:
     @staticmethod
     def inserir_categoria():
         categoria = input("Informe a categoria do produto: ")
-        c = Catgoria(0, categoria)
+        c = Categoria(0, categoria)
         Categorias.inserir(c)
 
     @staticmethod
@@ -428,14 +482,14 @@ class UI:
         UI.listar_categoria()
         id = int(input("Informe o id do cliente a ser atualizado: "))
         categoria = input("Informe a categoria do produto: ")
-        c = Catgoria(id, categoria)
+        c = Categoria(id, categoria)
         Categorias.atualizar(c)
     
     @staticmethod
     def excluir_categoria():
         UI.listar_categoria()
         id = int(input("Informe a categoria a ser excluída: "))
-        c = Catgoria(id, "")
+        c = Categoria(id, "")
         Categorias.excluir(c)
 
 

@@ -21,7 +21,7 @@ class Cliente:
 
     def set_fone(self, f):
         if f == 0: raise ValueError()
-        self.__fone = f
+        self.__fone = f 
     
     def get_nome(self):
         return self.__nome
