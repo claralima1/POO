@@ -1,4 +1,5 @@
 import json
+import datetime
 # Modelo - POJO POCO
 class Cliente:
     def __init__(self, id, nome, email, fone):
@@ -27,9 +28,39 @@ class Cliente:
     def get_fone(self):
         return self.fone 
     
+    def set_id(self, id):
+        self.id = id
+    
+    def get_idCliente(self):
+        return self.id
+    
 class Venda:
     def __init__(self, id):
         self.id = id
+        self.data = datetime.date
+        if self.total != 0:
+            self.carrinho = True
+        else: self.carrinho = False
+        self.total = VendaItem.qtd * VendaItem.preco
+        self.idCliente = Cliente.id
+
+    def set_idVenda(self, id):
+        self.id = id
+    
+    def get_idVenda(self):
+        return self.id
+    
+    def set_data(self, d):
+        self.data = d
+    
+    def get_data(self):
+        return self.data
+    
+    def get_carrinho(self):
+        return self.carrinho
+    
+    def get_nome(self):
+        return self.total
 
     def __str__(self):
         return f"{self.id}"
@@ -39,6 +70,8 @@ class VendaItem:
         self.id = id
         self.qtd = qtd
         self.preco = preco
+        self.idVenda = Venda.id
+        self.idProduto = Produto.id
     
     def set_qtd(self, q):
         self.qtd = q
@@ -61,6 +94,7 @@ class Produto:
         self.desc = d
         self.preco = p
         self.estoque = e
+        self.idCategoria = Categoria.id
 
     def __str__(self):
         return f"{self.id} - {self.desc} - {self.preco} - {self.estoque}"
