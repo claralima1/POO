@@ -107,6 +107,9 @@ class Produto:
     
     def set_preco(self, p):
         self.preco = p
+
+    def get_preco(self):
+        return self.preco
     
     def get_nome(self):
         return self.preco
