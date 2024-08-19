@@ -1,43 +1,39 @@
 from view import View
+
 class UI:
     @staticmethod
     def menu():
-        print("Clientes")
-        print(" 1-Inserir Cliente, 1.1-Listar, 1.2-Atualizar, 1.3-Excluir, 9-Fim")
-        print("Produtos")
-        print(" 2 -Inserir Produto, 2.1-Listar Produto, 2.2-Atualizar Produto, 2.3-Excluir Produto, 9-Fim")
-        print("Categorias")
-        print(" 3 -Inserir categoria, 3.1-Listar categoria, 3.2-Atualizar categoria, 3.3-Excluir categoria, 9-Fim")
-        
+        print("CLIENTES")
+        print("  1-Inserir, 2-Listar, 3-Atualizar, 4-Excluir, 20-Fim")
+        print("\nPRODUTOS")
+        print("  5-Inserir, 6-Listar, 7-Atualizar, 8-Excluir, 20-Fim")
+        print("\nCATEGORIAS")
+        print("  9-Inserir, 10-Listar, 11-Atualizar, 12-Excluir, 20-Fim")
         return int(input("Escolha uma opção: "))
-        
-    
     
     @staticmethod
     def main():
         op = 0
-        while op != 9:
+        while op != 20:
             op = UI.menu()
-            #CLIENTES
             if op == 1: UI.cliente_inserir()
             if op == 2: UI.cliente_listar()
             if op == 3: UI.cliente_atualizar()
             if op == 4: UI.cliente_excluir()
             #PRODUTOS
-            if op == 2: UI.inserir_produtos()
-            if op == 2.1: UI.listar_produtos()
-            if op == 2.2: UI.atualizar_produtos()
-            if op == 2.3: UI.excluir_produto()
-            #CATEGORIA  
-            if op == 3: UI.inserir_categoria()
-            if op == 3.1: UI.listar_categoria()
-            if op == 3.2: UI.atualizar_categoria()
-            if op == 3.3: UI.excluir_categoria()
+            if op == 5: UI.inserir_produtos()
+            if op == 6: UI.listar_produtos()
+            if op == 7: UI.atualizar_produtos()
+            if op == 8: UI.excluir_produto()
+            #CATEGORIA
+            if op == 9: UI.inserir_categoria()
+            if op == 10: UI.listar_categoria()
+            if op == 11: UI.atualizar_categoria()
+            if op == 12: UI.excluir_categoria()
+            
 
-    #CLIENTES
     @staticmethod
     def cliente_inserir():
-        #id = int(input("Informe o id: "))
         nome = input("Informe o nome: ")
         email = input("Informe o e-mail: ")
         fone = input("Informe o fone: ")
@@ -45,7 +41,7 @@ class UI:
 
     @staticmethod
     def cliente_listar():
-        for cliente in View.ciente_listar(): 
+        for cliente in View.cliente_listar(): 
             print(cliente)
 
     @staticmethod
@@ -56,7 +52,7 @@ class UI:
         email = input("Informe o novo e-mail: ")
         fone = input("Informe o novo fone: ")
         View.cliente_atualizar(id, nome, email, fone)
-        
+
     @staticmethod
     def cliente_excluir():
         UI.cliente_listar()
@@ -67,10 +63,10 @@ class UI:
     @staticmethod
     def inserir_produtos():
         desc = input("Informe qual o produto: ")
-        valor = int(input("Informe o valor do produto: "))
+        valor = float(input("Informe o valor do produto: "))
         estoque = int(input("Informe a quantidade no estoque: "))
-        View.inserir_Produtos(desc, valor, estoque)
-       
+        View.inserir_produtos(desc, valor, estoque)
+    
     @staticmethod
     def listar_produtos():
         for produtos in View.listar_produtos():
@@ -81,25 +77,25 @@ class UI:
         UI.listar_produtos()
         id = int(input("Informe o id do produto a ser atualizado: "))
         desc = input("Informe qual o novo produto: ")
-        valor = int(input("Informe o valor do novo produto: "))
+        valor = float(input("Informe o valor do novo produto: "))
         estoque = int(input("Informe a quantidade atualizada do estoque: "))
-        View.atualizar_produtos(id, desc, valor, estoque)
+        View.atualizar_produtos(id, desc, valor,estoque)
 
     @staticmethod
     def excluir_produto():
         UI.listar_produtos()
         id = int(input("Informe o id do produto a ser excluído: "))
-        View.excluir_produto(id)
+        View.cliente_excluir(id)
 
-    #CATEGORIA
+     #CATEGORIA
     @staticmethod
     def inserir_categoria():
         categoria = input("Informe a categoria do produto: ")
-        View.inserir_categoria(0, categoria)
+        View.inserir_categoria(categoria)
 
     @staticmethod
     def listar_categoria():
-        for categoria in View.listar_categoria:
+        for categoria in View.listar_categoria():
             print(categoria)
 
     @staticmethod
@@ -112,9 +108,8 @@ class UI:
     @staticmethod
     def excluir_categoria():
         UI.listar_categoria()
-        id = int(input("Informe a categoria a ser excluída: "))
+        id = int(input("Informe o id da categoria a ser excluída: "))
         View.excluir_categoria(id)
-
-
+    
 
 UI.main()

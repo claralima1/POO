@@ -1,13 +1,15 @@
-from cliente import Cliente, Clientes, Produto, Produtos, Categoria, Categorias
+from cliente import Cliente, Clientes, Produto, Produtos, Categoria, Categorias, Venda, Vendas
 
 class View:
+
+    @staticmethod
     def cliente_inserir(nome, email, fone):
         a = Cliente(0, nome, email, fone)
         Clientes.inserir(a)
 
     @staticmethod
     def cliente_listar():
-        return Clientes.listar() 
+        return Clientes.listar()
 
     @staticmethod
     def cliente_atualizar(id, nome, email, fone):
@@ -24,11 +26,10 @@ class View:
     def inserir_produtos(desc, valor, estoque):
         p = Produto(0, desc, valor, estoque)
         Produtos.inserir(p)
-
+    
     @staticmethod
     def listar_produtos():
         return Produtos.listar()
-        
 
     @staticmethod
     def atualizar_produtos(id, desc, valor, estoque):
@@ -39,14 +40,7 @@ class View:
     def excluir_produto(id):
         p = Produto(id, "","","")
         Produtos.atualizar(p)
-
-    @staticmethod
-    def produto_reajustar(percentual):
-        for prec in Produtos.produtos:
-            novo_preco = Produto.get_preco *percentual/100
-            Produto.get_preco == novo_preco
-        
-
+    
     #CATEGORIA
     @staticmethod
     def inserir_categoria(categoria):
@@ -58,7 +52,7 @@ class View:
         return Categorias.listar()
 
     @staticmethod
-    def atualizar_categoria(categoria):
+    def atualizar_categoria(id, categoria):
         c = Categoria(id, categoria)
         Categorias.atualizar(c)
     
