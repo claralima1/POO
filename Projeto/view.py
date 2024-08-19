@@ -1,4 +1,4 @@
-from cliente import Cliente, Clientes, Produto, Produtos, Categoria, Categorias, Venda, Vendas
+from cliente import Cliente, Clientes, Produto, Produtos, Categoria, Categorias
 
 class View:
 

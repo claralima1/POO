@@ -273,4 +273,90 @@ class Vendas:
         v.id = id
         cls.categorias.append(v)
         cls.salvar()
+    
+    @classmethod
+    def listar(cls):
+        cls.abrir()
+        return cls.vendas
+
+    @classmethod
+    def listar_id(cls, id):
+        cls.abrir()
+        for x in cls.vendas:
+            if x.id == id: return x
+        
+        return None
+    
+    @classmethod
+    def atualizar(cls, v):
+        pass
+    
+    @classmethod
+    def excluir(cls, v):
+        x = cls.listar_id(v.id)
+        if x != None:
+            cls.vendas.remove(x)
+            cls.salvar()
+
+    @classmethod
+    def salvar(cls):
+        with open("vendas.json", mode="w") as arquivo:
+            json.dump(cls.vendas, arquivo, default= vars)
+    
+    @classmethod
+    def abrir(cls):
+        pass
+
+class VendaItens:
+    venda_itens = []
+
+    @classmethod
+    def inserir(cls, i):
+        cls.abrir()
+        id = 0
+        for x in cls.categorias:
+            if x.id> id: id = x.id
+        id += 1
+        i.id = id
+        cls.categorias.append(i)
+        cls.salvar()
+    
+    @classmethod
+    def listar(cls):
+        cls.abrir()
+        return cls.venda_itens
+
+    @classmethod
+    def listar_id(cls, id):
+        cls.abrir()
+        for x in cls.venda_itens:
+            if x.id == id: return x
+        return None
+    
+    @classmethod
+    def atualizar(cls, i):
+        x = cls.listar_id(i.id)
+        if x != None:
+            x.qtd = i.qtd
+            x.preco = i.preco
+            cls.salvar()
+    
+    @classmethod
+    def excluir(cls, v):
+        x = cls.listar_id(v.id)
+        if x != None:
+            cls.vendas.remove(x)
+            cls.salvar()
+
+    @classmethod
+    def salvar(cls):
+        with open("vendas_itens.json", mode="w") as arquivo:
+            json.dump(cls.venda_itens, arquivo, default= vars)
+    
+    @classmethod
+    def abrir(cls):
+        pass
+    
+    
+    
 
