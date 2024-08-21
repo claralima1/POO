@@ -1,5 +1,4 @@
-import streamlit as st
+from inicioUI import InicioUI
 
-st.header("Equação do II Grau: y = ax**2+bx+c")
+InicioUI.main()
 
-st.button("Calcular")

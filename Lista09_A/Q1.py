@@ -41,9 +41,6 @@ class Equacao:
     def __str__(self):
         return f'Coeficientes:\nA = {self.__a}\nB = {self.__b} \nC = {self.__c}'
     
-e = Equacao(10, 20, 30)
-print(e.Y(10))
-print(e)
 
 
 
