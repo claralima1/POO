@@ -6,6 +6,9 @@ class Cliente:
         self.nome = nome
         self.email = email
         self.fone = fone
+
+    def get_id(self):
+        return self.id
     
     def set_nome(self, n):
         self.nome = n
@@ -35,6 +38,9 @@ class Produto:
         self.preco = preco
         self.estoque = estoque
     
+    def get_id(self):
+        return self.id
+    
     def set_desc(self, d):
         self.desc = d
     
@@ -60,6 +66,9 @@ class Categoria:
     def __init__(self, id, desc):
         self.id = id
         self.desc = desc
+    
+    def get_id(self):
+        return self.id
 
     def  __str__(self):
         return f"{self.id} - {self.desc}"
@@ -75,7 +84,10 @@ class VendaItem:
         self.id = id
         self.qtd = qtd
         self.preco = p
-    
+        
+    def get_id(self):
+        return self.id
+
     def set_qtd(self, q):
         self.qtd = q
     
@@ -140,13 +152,13 @@ class Clientes:
 
     @classmethod
     def salvar(cls):    
-        with open("clientes.json", mode="w") as arquivo:
+        with open("../clientes.json", mode="w") as arquivo:
             json.dump(cls.objetos, arquivo, default = vars)
 
     @classmethod
     def abrir(cls):
         cls.objetos = []
-        with open("clientes.json", mode="r") as arquivo:
+        with open("../clientes.json", mode="r") as arquivo:
             texto_arquivo = json.load(arquivo)
             for obj in texto_arquivo:
                 c = Cliente(obj["id"], obj["nome"], obj["email"], obj["fone"])
