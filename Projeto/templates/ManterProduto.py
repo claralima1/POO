@@ -26,5 +26,4 @@ class ManterProduto:
         preco = st.text_input("Informe o preço")
         estoque = st.text_input("Informe a quntidade")
         if st.button("Inserir"):
-            View.inserir_produtos()
-            
+            View.inserir_produtos(desc, preco, estoque)
