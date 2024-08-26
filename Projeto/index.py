@@ -1,4 +1,5 @@
 from templates.ManterCliente import ManterClienteUI
+from templates.ManterProduto import ManterProdutoUI
 
 import streamlit as st
 
@@ -7,7 +8,7 @@ class IndexUI:
         op = st.sidebar.selectbox("Menu", ["Manter Clientes", "Manter Categoria", "Manter Produtos", "Reajustar Preços"])
         if op == "Manter Clientes": ManterClienteUI.main()
         #if op == "Manter Categorias": ManterCategoriasUI.main()
-        #if op == "Manter Produtos": ManterProdutosUI.main()
+        if op == "Manter Produtos": ManterProdutoUI.main()
         #if op == "Reajustar Preços": ReajustarPrecosUI.main()
 
     def sidebar():
