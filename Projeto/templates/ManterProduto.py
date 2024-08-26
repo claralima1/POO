@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from view import View
+import time
 
 class ManterProduto:
     def main():
@@ -27,3 +28,36 @@ class ManterProduto:
         estoque = st.text_input("Informe a quntidade")
         if st.button("Inserir"):
             View.inserir_produtos(desc, preco, estoque)
+            st.sucess("Produto inserido com sucesso")
+            time.sleep(2)
+            st.rerun()
+    
+    def atualizar():
+        produtos = View.listar_produtos()
+        if len(produtos) == 0:
+            st.write("Nenhum produto cadastrado")
+        else:
+            op = st.selectbox("Atualização de Produtos", produtos)
+            desc = st.text_input("Informe o novo produto", op.get_desc())
+            preco = st.text_input("Informe o valor", op.get_preco())
+            estoque = st.text_input("Informe a quantidade no estoque", op.get_estoque)
+            if  st.button("Atualizar"):
+                id = op.get_id()
+                View.atualizar_produtos(id, desc, preco, estoque)
+                st.suucess("Produto atualizado com sucesso")
+                time.sleep(2)
+                st.rerun()
+
+    def excluir():
+        produtos = View.listar_produtos()
+        if len(produtos) == 0:
+            st.write("Nenhum produto cadastrado")
+        else:
+            op = st.selectbox("Exclusão de Produto", produtos)
+            if st.button("Excluir"):
+                id = op.get_id()
+                View.excluir_produto(id)
+                st.sucess("Produto excluído com sucesso")
+                time.sleep(2)
+                st.rerun()
+
