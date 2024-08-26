@@ -13,7 +13,7 @@ class ManterProdutoUI:
         with tab4: ManterProdutoUI.excluir()
     
     def listar():
-        produtos = []
+        produtos = View.listar_produtos()
         if len(produtos) == 0:
             st.write("Nenhum produto cadastrado")
         else:
@@ -25,10 +25,10 @@ class ManterProdutoUI:
     def inserir():
         desc = st.text_input("Informe o Produto")
         preco = st.text_input("Informe o preço")
-        estoque = st.text_input("Informe a quntidade")
+        estoque = st.text_input("Informe a quantidade")
         if st.button("Inserir"):
             View.inserir_produtos(desc, preco, estoque)
-            st.sucess("Produto inserido com sucesso")
+            st.success("Produto inserido com sucesso")
             time.sleep(2)
             st.rerun()
     
@@ -40,11 +40,11 @@ class ManterProdutoUI:
             op = st.selectbox("Atualização de Produtos", produtos)
             desc = st.text_input("Informe o novo produto", op.get_desc())
             preco = st.text_input("Informe o valor", op.get_preco())
-            estoque = st.text_input("Informe a quantidade no estoque", op.get_estoque)
-            if  st.button("Atualizar"):
+            estoque = st.text_input("Informe a quantidade no estoque", op.get_estoque())
+            if st.button("Atualizar"):
                 id = op.get_id()
                 View.atualizar_produtos(id, desc, preco, estoque)
-                st.suucess("Produto atualizado com sucesso")
+                st.success("Produto atualizado com sucesso")
                 time.sleep(2)
                 st.rerun()
 
@@ -57,7 +57,7 @@ class ManterProdutoUI:
             if st.button("Excluir"):
                 id = op.get_id()
                 View.excluir_produto(id)
-                st.sucess("Produto excluído com sucesso")
+                st.success("Produto excluído com sucesso")
                 time.sleep(2)
                 st.rerun()
 

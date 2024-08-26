@@ -207,13 +207,13 @@ class Produtos:
 
     @classmethod
     def salvar(cls):
-        with open("produtos.json", mode="w") as arquivo:
+        with open("../produtos.json", mode="w") as arquivo:
             json.dump(cls.produtos, arquivo, default=vars)
     
     @classmethod
     def abrir(cls):
         cls.produtos = []
-        with open("produtos.json", mode="r") as arquivo:
+        with open("../produtos.json", mode="r") as arquivo:
             texto_arquivo = json.load(arquivo)
             for  prod in texto_arquivo:
                 p = Produto(prod["id"], prod["desc"], prod["preco"], prod["estoque"])
@@ -260,13 +260,13 @@ class Categorias:
 
     @classmethod
     def salvar(cls):
-        with open("categorias.json", mode="w") as arquivo:
+        with open("../categorias.json", mode="w") as arquivo:
             json.dump(cls.categorias, arquivo, default=vars)
     
     @classmethod
     def abrir(cls):
         cls.categorias = []
-        with open("categorias.json", mode="r") as arquivo:
+        with open("../categorias.json", mode="r") as arquivo:
             texto_arquivo = json.load(arquivo)
             for c in texto_arquivo:
                 cat = Categoria(c["id"], c["desc"])
