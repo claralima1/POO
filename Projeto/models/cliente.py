@@ -103,8 +103,8 @@ class VendaItem:
 class Venda:
     def __init__(self, id):
         self.id = id
-        #self.data = datetime.date()
-        #self.carrinho = True
+        self.data = datetime.date()
+        self.carrinho = True
 
 
 # Persistência: Modelo -> Arquivo Json    
